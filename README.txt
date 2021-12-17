@@ -50,6 +50,3 @@ which is intentional as enforce the code to recommend only the best coupons for 
 INSERT INTO cjk5807_store2coupon (store_id, coupon_id)
 SELECT s.store_id, ABS(s.store_id + c.coupon_id)%33 FROM cjk5807_stores s, cjk5807_coupon c WHERE ABS(s.store_id + c.coupon_id)%33 < 16 and ABS(s.store_id + c.coupon_id)%33 > 0;
 
-
-One small typo in the design document where account is linked with a one to many to location. In reality it should be the other way around since one location can have many accounts.
-
